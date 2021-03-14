@@ -3,10 +3,13 @@ select employees.emp_no, employees.last_name, employees.first_name, employees.se
 inner join salaries on employees.emp_no = salaries.emp_no;
 --2)List first name, last name, and hire date for employees who were hired in 1986.
 select emp_no, first_name, hire_date from employees
-where hire_date >= '1986-01-01' and hire_date <= '1986-12-31'
+where hire_date >= '1986-01-01' and hire_date <= '1986-12-31';
 
 --3)List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
-
+select departments.dept_no, departments.dept_name, dept_managers.emp_no, employees.last_name, employees.first_name
+from dept_managers
+inner join departments on dept_managers.dept_no = departments.dept_no
+inner join employees on dept_managers.emp_no =employees.emp_no;
 
 --4)List the department of each employee with the following information: employee number, last name, first name, and department name.
 
