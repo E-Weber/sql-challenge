@@ -32,6 +32,10 @@ inner join departments as dept on dept.dept_no = dept_emp.dept_no
 where dept.dept_no = 'd007'
 
 --7)List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
-
+select emp.emp_no, emp.last_name, emp.first_name, dept.dept_name
+from employees as emp
+inner join dept_emp on dept_emp.emp_no = emp.emp_no
+inner join departments as dept on dept.dept_no = dept_emp.dept_no
+where dept.dept_no in ('d007','d005')
 
 --8)In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
